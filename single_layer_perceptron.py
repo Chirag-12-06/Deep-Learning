@@ -9,7 +9,7 @@ class Perceptron:
         self.weights = None
         self.bias = None
 
-    def Step_activation_func(self, x):
+    def step_activation_func(self, x):
         return 1 if x >= 0 else 0
 
     def fit(self, X, Y):
@@ -20,7 +20,7 @@ class Perceptron:
         for epoch in range(self.epochs):
             for i in range(X.shape[0]):
                 # Deciding the activation function
-                Y_pred = self.Step_activation_func(np.dot(self.weights, X[i]) + self.bias)
+                Y_pred = self.step_activation_func(np.dot(self.weights, X[i]) + self.bias)
                 # Deciding the loss function
                 mae = Y[i] - Y_pred
                 # Updating the weight and bias using optimization algorithm
@@ -30,7 +30,7 @@ class Perceptron:
 
     def predict(self, x_input):
         net_input = np.dot(x_input, self.weights) + self.bias
-        return np.array([self.Step_activation_func(x) for x in net_input])
+        return np.array([self.step_activation_func(x) for x in net_input])
 
 
 # Training data for logic gates
