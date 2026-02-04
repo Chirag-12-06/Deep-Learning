@@ -33,7 +33,7 @@ class single_layer_neural_network:
 
     def backprop(self,X,y,h):
         """Backpropagation algorithm to update weights"""
-        self.delta_e_w=np.dot(X.T,(h-y))/self.output_layer
+        =np.dot(X.T,(h-y))/self.output_layer
 
         self.weights=self.weights - self.lr*self.delta_e_w
 
